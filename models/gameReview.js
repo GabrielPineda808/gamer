@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var gameReview = sequelize.define("gameReview", {
-      date: {
+      posted: {
         type: DataTypes.DATE,
         allowNull: false,
       },
@@ -8,8 +8,12 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      rating: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     });
-    // game reviews go to game
+    
     gameReview.associate = function (models) {
   
       gameReview.belongsTo(models.game, {
@@ -17,9 +21,7 @@ module.exports = function (sequelize, DataTypes) {
           allowNull: false
         },
       });
-  
-      gameReview.belongsTo(models.game);
     };
   
     return gameReview;
-  }
+  };
