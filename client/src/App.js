@@ -5,6 +5,7 @@ import Signup from './pages/signup';
 import Login from './pages/login';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Details from './pages/gameDetail';
+import Modal from './components/Details/modal';
 
 function App() {
   return (

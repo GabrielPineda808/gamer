@@ -11,8 +11,8 @@ function ItemContainer(props) {
             paddingTop: 20
         },
         pic:{
-            width: 100,
-            height: 150
+            width: 75,
+            height: 100
         },
         padding:{
             marginRight: 900

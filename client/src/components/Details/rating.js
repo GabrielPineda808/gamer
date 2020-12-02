@@ -1,7 +1,18 @@
-import React from 'react';
+import React, {Component, useState} from 'react';
+import Modal from 'react-modal';
 import Review from './reviewCard';
+import './modal.css'
 
-function RatingContainer(props) {
+function RatingContainer(props){
+    const [modalIsOpen, setModalIsOpen] = useState(false)
+
+    const showModal = () => {
+        this.setState({ show: true });
+    }
+    const hideModal = () => {
+        this.setState({ show: false });
+    }
+
     const styles ={
         fontSize:{
             fontSize: 18,
@@ -29,11 +40,17 @@ function RatingContainer(props) {
         floaty:{
             fontSize: 22,
             marginRight: 495
+        },
+        modal:{
+            
         }
     }
     
     
-    return (
+    
+    
+    
+        return (
         <div className='container' style={styles.margin}>
             <div className="card" >
                     <div className="card-body">
@@ -42,14 +59,21 @@ function RatingContainer(props) {
                                 <h1 style={styles.padding}>Reviews</h1>
                             </div>
                             <div className='col-lg-2'>
-                                <button type='button' > Add Review</button>
+                                <button type='button' onClick={e=> setModalIsOpen(true)}> Add Review</button>
                             </div>
                         </div>
+                        <Modal isOpen={modalIsOpen} onRequestClose={e=> setModalIsOpen(false)} class='Modal'>
+                                <div>
+                                    <h1>Hello</h1>
+                                    <button onClick={e=> setModalIsOpen(false)}>Close</button>
+                                </div>
+                        </Modal>
                         <Review />
                     </div>
                 </div>
         </div>
   )
+    
     
 }
 

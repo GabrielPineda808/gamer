@@ -14,12 +14,13 @@ class Search extends React.Component {
       }
 
     handleChange(event){
-        this.setState({value: event.target.value})
+        this.setState({value: event.target.value.toLowerCase().replace(" ", '-')}, 
+        () => event.target.setSelectionRange(event.target.selectionStart, event.target.selectionEnd))
     }
 
     handleSubmit(event){
         event.preventDefault()
-        console.log("hello")
+        console.log(this.state.value)
         api.getGames(this.state.value).then(res => this.setState(state => {
             console.log(res.data)
             return {games: [res.data]}

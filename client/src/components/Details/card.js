@@ -34,10 +34,9 @@ function ItemContainer(props) {
     }
 
     const state ={
-        game:[]
+        game: []
     }
-
-    api.getGames(props.id )
+    console.log(props.prop)
 
     return (
         <div className='container' style={styles.margin}>
@@ -45,7 +44,7 @@ function ItemContainer(props) {
                     <div className="card-body">
                         <div className='row'>
                             <div className='col-lg-12'>
-                                <h1 style={styles.padding}>{props.title}</h1>
+                                <h1 style={styles.padding}>{props.prop}</h1>
                             </div>
                         </div>
                         <div className='row'>
