@@ -6,12 +6,15 @@ function Card() {
         fontSize:{
             fontSize: 54,
             fontWeight: 'bold'
+        },
+        color:{
+            backgroundColor: '#535d5e'
         }
     }
     
     
     return (
-        <div className="container">
+        <div className="container" style={styles.color}>
             <div class="card mt-5" >
                 <div class="card-body">
                     <h5 class="card-title">Login</h5>

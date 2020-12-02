@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default {
     getGames: function(search){
-        return axios.post({
+        return axios.request({
             method: 'GET',
             url: 'https://rawg-video-games-database.p.rapidapi.com/games/'+search,
             headers: {
